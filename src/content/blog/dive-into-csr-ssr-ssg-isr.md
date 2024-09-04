@@ -3,7 +3,7 @@ author: binghuis
 pubDatetime: 2024-08-20
 title: 深入了解 Next.js 中 CSR、SSR、SSG、ISR 四种前端渲染方式
 slug: dive-into-csr-ssr-ssg-isr
-featured: true
+featured: false
 draft: false
 tags:
   - nextjs

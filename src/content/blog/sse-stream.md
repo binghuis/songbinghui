@@ -1,13 +1,13 @@
 ---
 author: binghuis
 pubDatetime: 2024-09-04
-title: 实现类 ChatGPT 的数据流式传输
+title: 如何实现 ChatGPT 的数据流式传输
 slug: sse-stream
-featured: true
+featured: false
 draft: false
 tags:
-  - nextjs
-description: 本文主要介绍 Next.js 中四种常见的前端渲染方式，包括客户端渲染（CSR）、服务端渲染（SSR）、静态站点生成（SSG）和增量静态再生（ISR）。
+  - sse
+description: 本文主要介绍 ChatGPT 流式数据传输的前后端实现。
 ---
 
 [Server-Sent Events](https://zh.javascript.info/server-sent-events) 是一种基于 HTTP 长连接的服务端推流服务，服务端和客户端建立连接之后，服务端可主动向客户端推送数据流，而无需客户端再次发起请求。
