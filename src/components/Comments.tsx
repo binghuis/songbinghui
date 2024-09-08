@@ -1,10 +1,38 @@
-import Giscus from "@giscus/react";
+import Giscus, { type Theme } from "@giscus/react";
+import React from "react";
+
+const id = "comments";
+
+const htmlElement = document.documentElement;
+
+function getTheme(): Theme {
+  return htmlElement.getAttribute("data-theme") || "light";
+}
+
+const DefaultTheme: Theme = getTheme();
 
 export default function Comments() {
+  const [theme, setTheme] = React.useState<Theme>(DefaultTheme);
+
+  React.useEffect(() => {
+    const observer = new MutationObserver(mutationsList => {
+      const html = mutationsList.filter(
+        mutation =>
+          mutation.type === "attributes" &&
+          mutation.attributeName === "data-theme"
+      )[0];
+      if (html) {
+        setTheme(getTheme());
+      }
+    });
+
+    observer.observe(htmlElement, { attributes: true });
+  }, []);
+
   return (
     <div>
       <Giscus
-        id="comments"
+        id={id}
         repo="binghuis/blog"
         repoId="R_kgDOMsge8Q"
         category="Announcements"
@@ -14,7 +42,7 @@ export default function Comments() {
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
-        theme="preferred_color_scheme"
+        theme={theme}
         lang="zh-CN"
         loading="lazy"
       />
