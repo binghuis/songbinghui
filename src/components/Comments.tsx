@@ -1,7 +1,7 @@
 import Giscus, { type Theme } from "@giscus/react";
 import React from "react";
 
-const id = "comments";
+const id = "binghuis";
 
 const htmlElement = document.documentElement;
 
