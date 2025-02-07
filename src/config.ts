@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "songbinghui",
   profile: "https://binghuis.vercel.app/",
   desc: "Binghui's Blog.",
-  title: "Binghuis",
+  title: "Binghuis👏",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
