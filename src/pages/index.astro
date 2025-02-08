@@ -6,9 +6,9 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
+// import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
-import { SITE, SOCIALS } from "@config";
+import { SITE } from "@config";
 
 const posts = await getCollection("blog");
 
@@ -16,14 +16,14 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+// const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
   <Header />
   <main id="main-content">
-    <section id="hero">
-      <!-- <h1></h1> -->
+    <!-- <section id="hero">
+      <h1></h1>
 
       <p>
         <span>希望我的文章能为你解决实际问题～</span>
@@ -59,7 +59,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         )
       }
 
-      <!-- <p>
+      <p>
         点击本仓库
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
@@ -67,10 +67,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         >
           README
         </LinkButton> 查看更多信息。
-      </p> -->
-    </section>
+      </p>
+    </section> -->
 
-    <Hr />
+    <!-- <Hr /> -->
 
     {
       featuredPosts.length > 0 && (
@@ -95,7 +95,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>最新发布</h2>
+          {/* <h2>最新发布</h2> */}
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>
